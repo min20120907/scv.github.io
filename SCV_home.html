@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damsel Fly</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- favicon -->
+    <link rel="icon" href="images/logo.jpg" sizes="any">
+</head>
+
+<body>
+    <style>
+        .bg-intro{
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+        /* Material Design light blue and green gradient navbar */
+        .navbar-light.bg-gradient-primary {
+            background: linear-gradient(to right, #4CAF50, #2196F3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Material Design card style for jumbotron */
+        .jumbotron {
+            
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+        }
+
+        /* Text color and spacing for jumbotron content */
+        .jumbotron h1,
+        .jumbotron p {
+            /* color light gray*/
+            color: #222;
+
+            line-height: 1.7;
+        }
+
+        /* Responsive image container for jumbotron image */
+        .jumbotron .img-container {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .jumbotron .img-container img {
+            width: 40%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive text container for jumbotron text */
+        .jumbotron .text-container {
+            width: 60%;
+            margin-left: 2rem;
+        }
+
+        /* Material Design typography for carousel captions */
+        .carousel-caption {
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+            font-weight: 500;
+            bottom: 1.25rem;
+        }
+
+        /* Improve responsiveness for different screen sizes */
+        @media (max-width: 768px) {
+            .jumbotron .img-container,
+            .jumbotron .text-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .jumbotron .img-container img {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .jumbotron .text-container {
+                width: 100%;
+            }
+        }
+    </style>
+    <!-- 網站內容 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" alt="logo" width="50" height="50">
+                Damsel Fly
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">產品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">聯繫我們</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 輪播圖片 -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/image1.png" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="images/image2.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="images/image3.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="images/image4.jpg" class="d-block w-100" alt="Image 4">
+            </div>
+            <div class="carousel-item">
+                <img src="images/image5.jpg" class="d-block w-100" alt="Image 5">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="jumbotron bg-intro">
+        <div class="container">
+          <h1 class="display-4">歡迎來到 Damsel Fly</h1>
+          <p class="lead">我們致力於創建「Sea, Cycle, Valve」智慧雨水管理系統，協助台灣和其他地區應對水資源管理挑戰。</p>
+          <ul class="list-group mb-3">
+            <li class="list-group-item">模塊化和可擴展設計 - 適用於各種建築物規模。</li>
+            <li class="list-group-item">物聯網 (IoT) 技術 - 實時監控和數據分析，智能調整用水。</li>
+            <li class="list-group-item">雨水收集、過濾和管理 - 提高水資源利用效率。</li>
+            <li class="list-group-item">與建築外立面冷卻系統集成 - 節省能源消耗。</li>
+          </ul>
+          <p>我們堅信「Sea, Cycle, Valve」系統能帶來積極的社會影響。野柳地區雨水豐沛，卻面臨淡水短缺的困境。
+            此系統能有效解決用水效率問題，並提升當地居民的節水意識，進而為環境保護做出貢獻。</p>
+        </div>
+    </div>
+      
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>
