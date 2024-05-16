@@ -12,20 +12,21 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <!-- favicon -->
     <link rel="icon" href="images/logo.jpg" sizes="any">
 </head>
 
 <body>
     <style>
-        .bg-intro{
+        .bg-intro {
             background-image: url('images/background.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             height: 100vh;
         }
+
         /* Material Design light blue and green gradient navbar */
         .navbar-light.bg-gradient-primary {
             background: linear-gradient(to right, #4CAF50, #2196F3);
@@ -34,7 +35,7 @@
 
         /* Material Design card style for jumbotron */
         .jumbotron {
-            
+
             border-radius: 4px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 3rem;
@@ -80,6 +81,7 @@
 
         /* Improve responsiveness for different screen sizes */
         @media (max-width: 768px) {
+
             .jumbotron .img-container,
             .jumbotron .text-container {
                 flex-direction: column;
@@ -95,7 +97,30 @@
             .jumbotron .text-container {
                 width: 100%;
             }
+
         }
+
+        .carousel-item {
+    text-align: center; /* Center the content */
+}
+
+.parent {
+    display: inline-block; /* Align the image within the carousel item */
+    vertical-align: middle; /* Vertically align the image */
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: 100vh; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the available space without stretching the image */
+}
+.carousel-inner >.carousel-item > img {
+    height: 100vh; /* Adjusts the image height to 75% of the viewport height */
+    object-fit: cover; /* Ensures the image covers the area without distorting its aspect ratio */
+    width: 100%; /* Makes the image span the full width of its container */
+}
+
+
     </style>
     <!-- 網站內容 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
@@ -112,23 +137,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">首頁</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">產品</a>
+                        <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">關於我們</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">聯繫我們</a>
+                        <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- 輪播圖片 -->
+    <!-- Carousel Example Indicators -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -138,20 +162,30 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/image1.png" class="d-block w-100" alt="Image 1">
+            <div class="carousel-item active justify-content-center align-items-center">
+                <div class="parent">
+                    <img src="images/image1.svg" class="d-block carousel-image" alt="Image 1">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/image2.jpg" class="d-block w-100" alt="Image 2">
+            <div class="carousel-item justify-content-center align-items-center">
+                <div class="parent">
+                    <img src="images/image2.svg" class="d-block carousel-image" alt="Image 2">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/image3.jpg" class="d-block w-100" alt="Image 3">
+            <div class="carousel-item justify-content-center align-items-center">
+                <div class="parent">
+                    <img src="images/image3.svg" class="d-block carousel-image" alt="Image 3">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/image4.jpg" class="d-block w-100" alt="Image 4">
+            <div class="carousel-item justify-content-center align-items-center">
+                <div class="parent">
+                    <img src="images/image4.jpg" class="d-block carousel-image" alt="Image 4">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="images/image5.jpg" class="d-block w-100" alt="Image 5">
+            <div class="carousel-item justify-content-center align-items-center">
+                <div class="parent">
+                    <img src="images/image5.jpg" class="d-block carousel-image" alt="Image 5">
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -164,84 +198,115 @@
         </a>
     </div>
 
+
+
     <div class="jumbotron bg-intro">
         <div class="container">
-          <h1 class="display-4">歡迎來到 Damsel Fly</h1>
-          <p class="lead">我們致力於創建「Sea, Cycle, Valve」智慧雨水管理系統，協助台灣和其他地區應對水資源管理挑戰。</p>
-          <ul class="list-group mb-3">
-            <li class="list-group-item">模塊化和可擴展設計 - 適用於各種建築物規模。</li>
-            <li class="list-group-item">物聯網 (IoT) 技術 - 實時監控和數據分析，智能調整用水。</li>
-            <li class="list-group-item">雨水收集、過濾和管理 - 提高水資源利用效率。</li>
-            <li class="list-group-item">與建築外立面冷卻系統集成 - 節省能源消耗。</li>
-          </ul>
-          <p>我們堅信「Sea, Cycle, Valve」系統能帶來積極的社會影響。野柳地區雨水豐沛，卻面臨淡水短缺的困境。
-            此系統能有效解決用水效率問題，並提升當地居民的節水意識，進而為環境保護做出貢獻。</p>
-        </div>
-
-    </div>
-      
-  <section class="container py-5">
-    <h2 class="text-center mb-4">Our Team</h2>
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <div class="card team-member border-primary shadow">
-          <img src="placeholder.jpg" alt="Team member" class="card-img-top team-img">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Architectural Background</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                William Chandra (Team Leader)
-                <br>
-                <span class="text-muted"><i class="fas fa-certificate"></i> Bachelor's in Architecture</span>
-                <br>
-                <span class="text-muted"><i class="fas fa-leaf"></i> Experienced in Green Building Design</span>
-                <br>
-                <span class="text-muted"><i class="fas fa-cubes"></i> Modular Construction Expertise</span>
-              </li>
-              <li class="list-group-item">
-                Hongyu Zheng
-                <br>
-                <span class="text-muted"><i class="fas fa-graduation-cap"></i> Master's in Architecture (Environmental Design)</span>
-              </li>
-              <li class="list-group-item">
-                Vinca Metta Julicia
-                <br>
-                <span class="text-muted"><i class="fas fa-graduation-cap"></i> Bachelor's in Architecture</span>
-                <br>
-                <span class="text-muted"><i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)</span>
-              </li>
+            <h1 class="display-4">Welcome to Damsel Fly</h1>
+            <p class="lead">We are dedicated to creating the "Sea, Cycle, Valve" smart rainwater management system to
+                help Taiwan and other regions address water resource management challenges.</p>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Modular and scalable design - suitable for various building sizes.</li>
+                <li class="list-group-item">Internet of Things (IoT) technology - real-time monitoring and data analysis
+                    for intelligent water usage adjustment.</li>
+                <li class="list-group-item">Rainwater collection, filtration, and management - improve water resource
+                    utilization efficiency.</li>
+                <li class="list-group-item">Integration with building facade cooling systems - save energy consumption.
+                </li>
             </ul>
-          </div>
+            <p>We firmly believe that the "Sea, Cycle, Valve" system can bring about positive social impacts. While the
+                Yehliu region is rich in rainwater, it faces a shortage of fresh water.
+                This system can effectively solve the water use efficiency problem and enhance the water conservation
+                awareness of local residents, thereby contributing to environmental protection.</p>
         </div>
-      </div>
-      <div class="col-md-6 mb-3">
-        <div class="card team-member border-success shadow">
-          <img src="placeholder.jpg" alt="Team member" class="card-img-top team-img">
-          <div class="card-body">
-            <h5 class="card-title text-success">Computer Science Background</h5>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Tsangyu Lin
-                  <br>
-                  <span class="text-muted"><i class="fas fa-graduation-cap"></i> Master's in Computer Science</span>
-                  <br>
-                  <span class="text-muted"><i class="fas fa-code"></i> Proficient in Multiple Languages</span>
-                </li>
-                <li class="list-group-item">
-                  Peiteng Tsai
-                  <br>
-                  <span class="text-muted"><i class="fas fa-graduation-cap"></i> Master's in Computer Science</span>
-                  <br>
-                  <span class="text-muted"><i class="fas fa-code"></i> Software Development and IoT Implementation</span>
-                </li>
-              </ul>
+    </div>
+
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <!-- William Chandra -->
+            <div class="col-md-4 mb-3 mx-auto">
+                <div class="card team-member border-primary shadow" style="max-width: 18rem;">
+                    <img src="images/WilliamChandra.jpeg" alt="William Chandra" class="card-img-top team-img"
+                        style="max-height: 200pt;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">William Chandra (Team Leader)</h5>
+                        <p class="card-text">
+                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                            <i class="fas fa-leaf"></i> Experienced in Green Building Design <br>
+                            <i class="fas fa-cubes"></i> Modular Construction Expertise
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-md-4 mb-3 mx-auto">
+                <div class="card team-member border-success shadow" style="max-width: 18rem;">
+                    <img src="images/HungyuTseng.jpeg" alt="Hungyu Tseng" class="card-img-top team-img">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">Hungyu Tseng</h5>
+                        <p class="card-text">
+                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                            Master's in Architecture (Environmental Design)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 mx-auto">
+                <div class="card team-member border-info shadow" style="max-width: 18rem;">
+                    <img src="images/VincaMettaJulicia.png" alt="Vinca Metta Julicia" class="card-img-top team-img"
+                        style="max-height: 200pt;">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">Vinca Metta Julicia</h5>
+                        <p class="card-text">
+                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                            <i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 mx-auto">
+                <div class="card team-member border-warning shadow" style="max-width: 18rem;">
+                    <img src="images/TsangyuLin.jpeg" alt="Tsangyu Lin" class="card-img-top team-img"
+                        style="max-height: 200pt;">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning">Tsangyu Lin</h5>
+                        <p class="card-text">
+                            <i class="fas fa-graduation-cap"></i> Bachelor's in Computer Science <br>
+                            <i class="fas fa-graduation-cap"></i> Master's in Computer Science <br>
+                            <i class="fas fa-language"></i> Proficient in Multiple Languages (English, Chinese,
+                            Japanese, German) <br>
+                            <i class="fas fa-database"></i> Software Development and IoT Implementation
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3 mx-auto">
+                <div class="card team-member border-secondary shadow" style="max-width: 18rem;">
+                    <img src="images/PeitengTsai.jpeg" alt="Peiteng Tsai" class="card-img-top team-img"
+                        style="max-height: 200pt;">
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary">Peiteng Tsai</h5>
+                        <p class="card-text">
+                            <i class="fas fa-graduation-cap"> </i> Master's in Computer Science <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-   
+    </section>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
+$(document).ready(function() {
+    $('#carouselExampleIndicators').carousel({
+        interval: 3000 // Change the interval time as needed
+    });
+});
+
 
     </script>
 </body>
