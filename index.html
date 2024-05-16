@@ -27,6 +27,51 @@
             height: 100vh;
         }
 
+        .slick-slide {
+            margin: 0 10px;
+            /* Adjust space between cards */
+            height: 300px;
+            /* Set a fixed height for all cards */
+        }
+
+        .card {
+            /* Your card styles */
+            height: 100%;
+            /* Make card height fill the slide */
+        }
+
+        /* Adjust the background color and transparency of the jumbotron */
+        .team.jumbotron {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Dark background with transparency */
+        }
+
+        /* Style the cards to complement the darker background */
+        .card.team-member {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slightly transparent white */
+            color: #333;
+            /* Dark text for better contrast */
+        }
+
+        /* Update the card titles to stand out */
+        .card.team-member .card-title {
+            color: #333;
+            /* White text */
+        }
+
+        /* Ensure the images blend well with the card and background */
+        .card.team-member .team-img {
+            border-bottom: 5px solid rgba(255, 255, 255, 0.7);
+            /* White border for separation */
+        }
+
+        /* Update the icons to match the new color scheme */
+        .card.team-member .fas {
+            color: #333;
+            /* White icons */
+        }
+
         .bg-intro {
             background-image: url('images/background1.jpg');
             background-size: cover;
@@ -49,6 +94,7 @@
             width: 100%;
             /* Full width */
         }
+
         /* Material Design card style for jumbotron */
         .jumbotron {
 
@@ -151,7 +197,7 @@
             /* Makes the image span the full width of its container */
         }
     </style>
-    
+
     <!-- Carousel Example Indicators -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -224,18 +270,18 @@
                 awareness of local residents, thereby contributing to environmental protection.</p>
         </div>
     </div>
-    <div class="team jumbotron h-auto" style="background-color: rgba(255, 255, 255, 0.5);">
+    <div class="team jumbotron h-auto slider" style="background-color: rgba(255, 255, 255, 0.5);">
         <section class="container py-5">
             <h2 class="display-4 text-light">Meet the Team</h2>
             <br>
             <div class="row justify-content-center">
                 <!-- William Chandra -->
                 <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member border-primary shadow" style="max-width: 30rem;">
+                    <div class="card team-member shadow" style="max-width: 30rem;">
                         <img src="images/WilliamChandra.jpeg" alt="William Chandra" class="card-img-top team-img"
                             style="max-height: 350pt;">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">William Chandra (Team Leader)</h5>
+                            <h5 class="card-title">William Chandra (Team Leader)</h5>
                             <p class="card-text">
                                 <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
                                 <i class="fas fa-leaf"></i> Experienced in Green Building Design <br>
@@ -246,10 +292,10 @@
                 </div>
 
                 <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member border-success shadow" style="max-width: 30rem;">
+                    <div class="card team-member shadow" style="max-width: 30rem;">
                         <img src="images/HungyuTseng.jpeg" alt="Hungyu Tseng" class="card-img-top team-img">
                         <div class="card-body">
-                            <h5 class="card-title text-success"> Hungyu Tseng</h5>
+                            <h5 class="card-title"> Hungyu Tseng</h5>
                             <p class="card-text">
                                 <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
                                 <i class="fas fa-graduation-cap"></i> Master's in Architecture (Environmental Design)
@@ -259,11 +305,11 @@
                 </div>
 
                 <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member border-info shadow" style="max-width: 30rem;">
+                    <div class="card team-member shadow" style="max-width: 30rem;">
                         <img src="images/VincaMettaJulicia.png" alt="Vinca Metta Julicia" class="card-img-top team-img"
                             style="max-height: 350pt;">
                         <div class="card-body">
-                            <h5 class="card-title text-info">Vinca Metta Julicia</h5>
+                            <h5 class="card-title">Vinca Metta Julicia</h5>
                             <p class="card-text">
                                 <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
                                 <i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)
@@ -273,11 +319,11 @@
                 </div>
 
                 <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member border-warning shadow" style="max-width: 30rem;">
+                    <div class="card team-member shadow" style="max-width: 30rem;">
                         <img src="images/TsangyuLin.jpeg" alt="Tsangyu Lin" class="card-img-top team-img"
                             style="max-height: 350pt;">
                         <div class="card-body">
-                            <h5 class="card-title text-warning">Tsangyu Lin</h5>
+                            <h5 class="card-title">Tsangyu Lin</h5>
                             <p class="card-text">
                                 <i class="fas fa-graduation-cap"></i> Bachelor's in Computer Science <br>
                                 <i class="fas fa-graduation-cap"></i> Master's in Computer Science <br>
@@ -290,11 +336,11 @@
                 </div>
 
                 <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member border-secondary shadow" style="max-width: 30rem;">
+                    <div class="card team-member shadow" style="max-width: 30rem;">
                         <img src="images/PeitengTsai.jpeg" alt="Peiteng Tsai" class="card-img-top team-img"
                             style="max-height: 350pt;">
                         <div class="card-body">
-                            <h5 class="card-title text-secondary">Peiteng Tsai</h5>
+                            <h5 class="card-title">Peiteng Tsai</h5>
                             <p class="card-text">
                                 <i class="fas fa-graduation-cap"> </i> Master's in Computer Science <br>
                             </p>
@@ -336,6 +382,35 @@
     </nav>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 3, /* Number of cards to show at once */
+            slidesToScroll: 3, /* Number of cards to scroll at once */
+            responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+        });
+        
 
 
     </script>
