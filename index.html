@@ -19,8 +19,16 @@
 
 <body>
     <style>
+        .team {
+            background-image: url('images/background2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
         .bg-intro {
-            background-image: url('images/background.png');
+            background-image: url('images/background1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,10 +37,18 @@
 
         /* Material Design light blue and green gradient navbar */
         .navbar-light.bg-gradient-primary {
+
             background: linear-gradient(to right, #4CAF50, #2196F3);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+            overflow: hidden;
 
+            position: fixed;
+            /* Fix the navbar to the top of the page */
+            top: 0;
+            /* Position the navbar at the top */
+            width: 100%;
+            /* Full width */
+        }
         /* Material Design card style for jumbotron */
         .jumbotron {
 
@@ -135,36 +151,7 @@
             /* Makes the image span the full width of its container */
         }
     </style>
-    <!-- 網站內容 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.jpg" alt="logo" width="50" height="50">
-                <b>Damsel Fly</b>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
     <!-- Carousel Example Indicators -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -213,18 +200,22 @@
 
 
 
-    <div class="jumbotron bg-intro h-auto">
-        <div class="container">
+    <div class="jumbotron bg-intro h-auto " style="background-color: rgba(255, 255, 255, 0.5); margin-bottom: 0;">
+        <div class="container" style="background-color: rgba(255, 255, 255, 0.6);">
             <h1 class="display-4">Welcome to Damsel Fly</h1>
             <p class="lead">We are dedicated to creating the "Sea, Cycle, Valve" smart rainwater management system to
                 help Taiwan and other regions address water resource management challenges.</p>
             <ul class="list-group list-group-flush bg-dark text-light mb-3">
-                <li class="list-group-item">Modular and scalable design - suitable for various building sizes.</li>
-                <li class="list-group-item">Internet of Things (IoT) technology - real-time monitoring and data analysis
+                <li class="list-group-item bg-dark text-light mb-3">Modular and scalable design - suitable for various
+                    building sizes.</li>
+                <li class="list-group-item bg-dark text-light mb-3">Internet of Things (IoT) technology - real-time
+                    monitoring and data analysis
                     for intelligent water usage adjustment.</li>
-                <li class="list-group-item">Rainwater collection, filtration, and management - improve water resource
+                <li class="list-group-item bg-dark text-light mb-3">Rainwater collection, filtration, and management -
+                    improve water resource
                     utilization efficiency.</li>
-                <li class="list-group-item">Integration with building facade cooling systems - save energy consumption.
+                <li class="list-group-item bg-dark text-light mb-3">Integration with building facade cooling systems -
+                    save energy consumption.
                 </li>
             </ul>
             <p>We firmly believe that the "Sea, Cycle, Valve" system can bring about positive social impacts. While the
@@ -233,94 +224,118 @@
                 awareness of local residents, thereby contributing to environmental protection.</p>
         </div>
     </div>
+    <div class="team jumbotron h-auto" style="background-color: rgba(255, 255, 255, 0.5);">
+        <section class="container py-5">
+            <h2 class="display-4 text-light">Meet the Team</h2>
+            <br>
+            <div class="row justify-content-center">
+                <!-- William Chandra -->
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card team-member border-primary shadow" style="max-width: 30rem;">
+                        <img src="images/WilliamChandra.jpeg" alt="William Chandra" class="card-img-top team-img"
+                            style="max-height: 350pt;">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">William Chandra (Team Leader)</h5>
+                            <p class="card-text">
+                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                                <i class="fas fa-leaf"></i> Experienced in Green Building Design <br>
+                                <i class="fas fa-cubes"></i> Modular Construction Expertise
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-    <section class="container py-5">
-        <h2 class="display-4">Meet the Team</h2>
-        <br>
-        <div class="row justify-content-center">
-            <!-- William Chandra -->
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card team-member border-primary shadow" style="max-width: 30rem;">
-                    <img src="images/WilliamChandra.jpeg" alt="William Chandra" class="card-img-top team-img"
-                        style="max-height: 350pt;">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">William Chandra (Team Leader)</h5>
-                        <p class="card-text">
-                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                            <i class="fas fa-leaf"></i> Experienced in Green Building Design <br>
-                            <i class="fas fa-cubes"></i> Modular Construction Expertise
-                        </p>
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card team-member border-success shadow" style="max-width: 30rem;">
+                        <img src="images/HungyuTseng.jpeg" alt="Hungyu Tseng" class="card-img-top team-img">
+                        <div class="card-body">
+                            <h5 class="card-title text-success"> Hungyu Tseng</h5>
+                            <p class="card-text">
+                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                                <i class="fas fa-graduation-cap"></i> Master's in Architecture (Environmental Design)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card team-member border-info shadow" style="max-width: 30rem;">
+                        <img src="images/VincaMettaJulicia.png" alt="Vinca Metta Julicia" class="card-img-top team-img"
+                            style="max-height: 350pt;">
+                        <div class="card-body">
+                            <h5 class="card-title text-info">Vinca Metta Julicia</h5>
+                            <p class="card-text">
+                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
+                                <i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card team-member border-warning shadow" style="max-width: 30rem;">
+                        <img src="images/TsangyuLin.jpeg" alt="Tsangyu Lin" class="card-img-top team-img"
+                            style="max-height: 350pt;">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Tsangyu Lin</h5>
+                            <p class="card-text">
+                                <i class="fas fa-graduation-cap"></i> Bachelor's in Computer Science <br>
+                                <i class="fas fa-graduation-cap"></i> Master's in Computer Science <br>
+                                <i class="fas fa-language"></i> Proficient in Multiple Languages (English, Chinese,
+                                Japanese, German) <br>
+                                <i class="fas fa-database"></i> Software Development and IoT Implementation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mx-auto">
+                    <div class="card team-member border-secondary shadow" style="max-width: 30rem;">
+                        <img src="images/PeitengTsai.jpeg" alt="Peiteng Tsai" class="card-img-top team-img"
+                            style="max-height: 350pt;">
+                        <div class="card-body">
+                            <h5 class="card-title text-secondary">Peiteng Tsai</h5>
+                            <p class="card-text">
+                                <i class="fas fa-graduation-cap"> </i> Master's in Computer Science <br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </div>
+    <!-- 網站內容 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" alt="logo" width="50" height="50">
+                <b>Damsel Fly</b>
+            </a>
 
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card team-member border-success shadow" style="max-width: 30rem;">
-                    <img src="images/HungyuTseng.jpeg" alt="Hungyu Tseng" class="card-img-top team-img">
-                    <div class="card-body">
-                        <h5 class="card-title text-success"> Hungyu Tseng</h5>
-                        <p class="card-text">
-                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                            <i class="fas fa-graduation-cap"></i> Master's in Architecture (Environmental Design)
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card team-member border-info shadow" style="max-width: 30rem;">
-                    <img src="images/VincaMettaJulicia.png" alt="Vinca Metta Julicia" class="card-img-top team-img"
-                        style="max-height: 350pt;">
-                    <div class="card-body">
-                        <h5 class="card-title text-info">Vinca Metta Julicia</h5>
-                        <p class="card-text">
-                            <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                            <i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card team-member border-warning shadow" style="max-width: 30rem;">
-                    <img src="images/TsangyuLin.jpeg" alt="Tsangyu Lin" class="card-img-top team-img"
-                        style="max-height: 350pt;">
-                    <div class="card-body">
-                        <h5 class="card-title text-warning">Tsangyu Lin</h5>
-                        <p class="card-text">
-                            <i class="fas fa-graduation-cap"></i> Bachelor's in Computer Science <br>
-                            <i class="fas fa-graduation-cap"></i> Master's in Computer Science <br>
-                            <i class="fas fa-language"></i> Proficient in Multiple Languages (English, Chinese,
-                            Japanese, German) <br>
-                            <i class="fas fa-database"></i> Software Development and IoT Implementation
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-3 mx-auto">
-                <div class="card team-member border-secondary shadow" style="max-width: 30rem;">
-                    <img src="images/PeitengTsai.jpeg" alt="Peiteng Tsai" class="card-img-top team-img"
-                        style="max-height: 350pt;">
-                    <div class="card-body">
-                        <h5 class="card-title text-secondary">Peiteng Tsai</h5>
-                        <p class="card-text">
-                            <i class="fas fa-graduation-cap"> </i> Master's in Computer Science <br>
-                        </p>
-                    </div>
-                </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-
-
+    </nav>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#carouselExampleIndicators').carousel({
-                interval: 3000 // Change the interval time as needed
-            });
-        });
 
 
     </script>
