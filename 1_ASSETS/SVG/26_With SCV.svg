@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.24 88.24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0cc0df;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-3" cx="44.12" cy="44.12" r="44.12"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <circle class="cls-3" cx="44.11" cy="43.58" r="25.07"/>
+    </clipPath>
+  </defs>
+  <g id="Text">
+    <g class="cls-5">
+      <rect class="cls-1" width="88.24" height="88.24"/>
+    </g>
+    <g class="cls-4">
+      <rect class="cls-2" x="19.05" y="18.51" width="50.13" height="50.13" transform="translate(-17.89 43.96) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

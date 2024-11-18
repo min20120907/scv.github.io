@@ -4,424 +4,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damsel Fly</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <!-- favicon -->
-    <link rel="icon" href="images/logo.jpg" sizes="any">
+    <title>Sea-Cycle-Valve</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <style>
-        .team {
-            background-image: url('images/background2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-        }
-
-        .slick-slide {
-            margin: 0 10px;
-            /* Adjust space between cards */
-            height: 300px;
-            /* Set a fixed height for all cards */
-        }
-
-        .card {
-            /* Your card styles */
-            height: 100%;
-            /* Make card height fill the slide */
-        }
-
-        /* Adjust the background color and transparency of the jumbotron */
-        .team.jumbotron {
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Dark background with transparency */
-        }
-
-        /* Style the cards to complement the darker background */
-        .card.team-member {
-            background-color: rgba(255, 255, 255, 0.8);
-            /* Slightly transparent white */
-            color: #333;
-            /* Dark text for better contrast */
-        }
-
-        /* Update the card titles to stand out */
-        .card.team-member .card-title {
-            color: #333;
-            /* White text */
-        }
-
-        /* Ensure the images blend well with the card and background */
-        .card.team-member .team-img {
-            border-bottom: 5px solid rgba(255, 255, 255, 0.7);
-            /* White border for separation */
-        }
-
-        /* Update the icons to match the new color scheme */
-        .card.team-member .fas {
-            color: #333;
-            /* White icons */
-        }
-
-        .bg-intro {
-            background-image: url('images/background1.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-        }
-
-        /* Material Design light blue and green gradient navbar */
-        .navbar-light.bg-gradient-primary {
-
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-
-            position: fixed;
-            /* Fix the navbar to the top of the page */
-            top: 0;
-            /* Position the navbar at the top */
-            width: 100%;
-            /* Full width */
-        }
-
-        /* Material Design card style for jumbotron */
-        .jumbotron {
-
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 3rem;
-        }
-
-        /* Text color and spacing for jumbotron content */
-        .jumbotron h1,
-        .jumbotron p {
-            /* color light gray*/
-            color: #222;
-
-            line-height: 1.7;
-        }
-
-        /* Responsive image container for jumbotron image */
-        .jumbotron .img-container {
-            display: flex;
-            align-items: center;
-            margin-top: 2rem;
-        }
-
-        .jumbotron .img-container img {
-            width: 40%;
-            height: auto;
-            border-radius: 4px;
-            object-fit: cover;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Responsive text container for jumbotron text */
-        .jumbotron .text-container {
-            width: 60%;
-            margin-left: 2rem;
-        }
-
-        /* Material Design typography for carousel captions */
-        .carousel-caption {
-            color: white;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-            font-weight: 500;
-            bottom: 1.25rem;
-        }
-
-        /* Improve responsiveness for different screen sizes */
-        @media (max-width: 768px) {
-
-            .jumbotron .img-container,
-            .jumbotron .text-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .jumbotron .img-container img {
-                width: 100%;
-                margin-bottom: 1rem;
-            }
-
-            .jumbotron .text-container {
-                width: 100%;
-            }
-
-        }
-
-        .carousel-item {
-            text-align: center;
-            /* Center the content */
-        }
-
-        .team-img {
-            object-fit: cover;
-            /* Maintain aspect ratio and cover the container */
-            height: auto;
-        }
-
-        .parent {
-            display: inline-block;
-            /* Align the image within the carousel item */
-            vertical-align: middle;
-            /* Vertically align the image */
-        }
-
-        .carousel-image {
-            max-width: 100%;
-            height: 100vh;
-            /* Maintain aspect ratio */
-            object-fit: cover;
-            /* Cover the available space without stretching the image */
-        }
-
-        .carousel-inner>.carousel-item>img {
-            height: 100vh;
-            /* Adjusts the image height to 75% of the viewport height */
-            object-fit: cover;
-            /* Ensures the image covers the area without distorting its aspect ratio */
-            width: 100%;
-            /* Makes the image span the full width of its container */
-        }
-    </style>
-
-    <!-- Carousel Example Indicators -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active justify-content-center align-items-center">
-                <div class="parent">
-                    <img src="images/image1.svg" class="d-block carousel-image" alt="Image 1">
-                </div>
-            </div>
-            <div class="carousel-item justify-content-center align-items-center">
-                <div class="parent">
-                    <img src="images/image2.svg" class="d-block carousel-image" alt="Image 2">
-                </div>
-            </div>
-            <div class="carousel-item justify-content-center align-items-center">
-                <div class="parent">
-                    <img src="images/image3.svg" class="d-block carousel-image" alt="Image 3">
-                </div>
-            </div>
-            <div class="carousel-item justify-content-center align-items-center">
-                <div class="parent">
-                    <img src="images/image4.jpg" class="d-block carousel-image" alt="Image 4">
-                </div>
-            </div>
-            <div class="carousel-item justify-content-center align-items-center">
-                <div class="parent">
-                    <img src="images/image5.jpg" class="d-block carousel-image" alt="Image 5">
-                </div>
-            </div>
+    <!-- Top Section: Logo and Search Bar -->
+    <div class="top-section">
+        <div class="logo-section">
+            <img src="1_ASSETS/PNG Transparent/1_LOGO@2x.png" alt="Logo" class="logo">
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-
-
-
-    <div class="jumbotron bg-intro h-auto " style="background-color: rgba(255, 255, 255, 0.5); margin-bottom: 0;">
-        <div class="container" style="background-color: rgba(255, 255, 255, 0.6);">
-            <h1 class="display-4">Welcome to Damsel Fly</h1>
-            <p class="lead">We are dedicated to creating the "Sea, Cycle, Valve" smart rainwater management system to
-                help Taiwan and other regions address water resource management challenges.</p>
-            <ul class="list-group list-group-flush bg-dark text-light mb-3">
-                <li class="list-group-item bg-dark text-light mb-3">Modular and scalable design - suitable for various
-                    building sizes.</li>
-                <li class="list-group-item bg-dark text-light mb-3">Internet of Things (IoT) technology - real-time
-                    monitoring and data analysis
-                    for intelligent water usage adjustment.</li>
-                <li class="list-group-item bg-dark text-light mb-3">Rainwater collection, filtration, and management -
-                    improve water resource
-                    utilization efficiency.</li>
-                <li class="list-group-item bg-dark text-light mb-3">Integration with building facade cooling systems -
-                    save energy consumption.
-                </li>
-            </ul>
-            <p>We firmly believe that the "Sea, Cycle, Valve" system can bring about positive social impacts. While the
-                Yehliu region is rich in rainwater, it faces a shortage of fresh water.
-                This system can effectively solve the water use efficiency problem and enhance the water conservation
-                awareness of local residents, thereby contributing to environmental protection.</p>
+        <div class="search-wrapper">
+            <input type="text" placeholder="Search..." class="search-input">
+            <button class="search-button"></button>
         </div>
     </div>
-    <div class="team jumbotron h-auto slider flickity" style="background-color: rgba(255, 255, 255, 0.5);">
-        <section class="container py-5">
-            <h2 class="display-4 text-light">Meet the Team</h2>
-            <br>
-            <div class="row justify-content-center">
-                <!-- William Chandra -->
-                <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member shadow" style="max-width: 30rem;">
-                        <img src="images/WilliamChandra.jpeg" alt="William Chandra" class="card-img-top team-img"
-                            style="max-height: 350pt;">
-                        <div class="card-body">
-                            <h5 class="card-title">William Chandra (Team Leader)</h5>
-                            <p class="card-text">
-                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                                <i class="fas fa-leaf"></i> Experienced in Green Building Design <br>
-                                <i class="fas fa-cubes"></i> Modular Construction Expertise
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member shadow" style="max-width: 30rem;">
-                        <img src="images/HungyuTseng.jpeg" alt="Hungyu Tseng" class="card-img-top team-img">
-                        <div class="card-body">
-                            <h5 class="card-title"> Hungyu Tseng</h5>
-                            <p class="card-text">
-                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                                <i class="fas fa-graduation-cap"></i> Master's in Architecture (Environmental Design)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member shadow" style="max-width: 30rem;">
-                        <img src="images/VincaMettaJulicia.png" alt="Vinca Metta Julicia" class="card-img-top team-img"
-                            style="max-height: 350pt;">
-                        <div class="card-body">
-                            <h5 class="card-title">Vinca Metta Julicia</h5>
-                            <p class="card-text">
-                                <i class="fas fa-graduation-cap"></i> Bachelor's in Architecture <br>
-                                <i class="fas fa-graduation-cap"></i> Master's in Urban Design (In Progress)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member shadow" style="max-width: 30rem;">
-                        <img src="images/TsangyuLin.jpeg" alt="Tsangyu Lin" class="card-img-top team-img"
-                            style="max-height: 350pt;">
-                        <div class="card-body">
-                            <h5 class="card-title">Tsangyu Lin</h5>
-                            <p class="card-text">
-                                <i class="fas fa-graduation-cap"></i> Bachelor's in Computer Science <br>
-                                <i class="fas fa-graduation-cap"></i> Master's in Computer Science <br>
-                                <i class="fas fa-language"></i> Proficient in Multiple Languages (English, Chinese,
-                                Japanese, German) <br>
-                                <i class="fas fa-database"></i> Software Development and IoT Implementation
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3 mx-auto">
-                    <div class="card team-member shadow" style="max-width: 30rem;">
-                        <img src="images/PeitengTsai.jpeg" alt="Peiteng Tsai" class="card-img-top team-img"
-                            style="max-height: 350pt;">
-                        <div class="card-body">
-                            <h5 class="card-title">Peiteng Tsai</h5>
-                            <p class="card-text">
-                                <i class="fas fa-graduation-cap"> </i> Master's in Computer Science <br>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <!-- 網站內容 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-gradient-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.jpg" alt="logo" width="50" height="50">
-                <b>Damsel Fly</b>
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><i class="fas fa-info-circle"></i><span>About</span></li>
+            <li><i class="fas fa-cogs"></i><span>SCV System</span></li>
+            <li><i class="fas fa-image"></i><span>Gallery</span></li>
+            <li><i class="fas fa-globe"></i><span>Languages</span></li>
+            <li><i class="fas fa-shopping-cart"></i><span>Cart</span></li>
+            <li><i class="fas fa-phone-alt"></i><span>Contact Us</span></li>
+        </ul>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
-$('.slider').slick({
-            infinite: true,
-            slidesToShow: 3, /* Number of cards to show at once */
-            slidesToScroll: 3, /* Number of cards to scroll at once */
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
+
+
+    <!-- Bottom Menu Bar -->
+    <div class="bottom-menu">
+        <div class="menu-item">
+            <img src="1_ASSETS/PNG Transparent/8_Saving Overview@2x.png" alt="Savings Overview">
+            <span>Savings Overview</span>
+        </div>
+        <div class="menu-item">
+            <img src="1_ASSETS/PNG Transparent/9_Product Types@2x.png" alt="Product Types">
+            <span>Product Types</span>
+        </div>
+        <div class="menu-item">
+            <img src="1_ASSETS/PNG Transparent/10_How It Works@2x.png" alt="How It Works">
+            <span>How It Works</span>
+        </div>
+        <div class="menu-item">
+            <img src="1_ASSETS/PNG Transparent/11_Gallery Big@2x.png" alt="Gallery">
+            <span>Gallery</span>
+        </div>
+    </div>
+    <div class="merged-section">
+        <!-- Full-Width YouTube Video Section -->
+        <div class="full-width-video-section">
+            <iframe class="youtube-video" src="https://www.youtube.com/embed/LIq_Gn3Iiq4" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <!-- Comparison Chart Section -->
+        <div class="comparison-section">
+            <h2>Water Usage Saving Percentage Comparison Chart</h2>
+            <h3>Smart Rainwater Harvesting System</h3>
+
+            <div class="charts-container">
+                <!-- Left Chart: Without SCV -->
+                <div class="chart">
+                    <img src="1_ASSETS/PNG Transparent/25_Without SCV@2x.png" alt="Without SCV" class="chart-icon">
+                    <p>Without SCV</p>
+                    <canvas id="chartWithoutSCV"></canvas>
+                    <p>Without AI Machine Learning</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="vs-text">VS</div>
+
+                <!-- Right Chart: With SCV -->
+                <div class="chart">
+                    <img src="1_ASSETS/PNG Transparent/26_With SCV@2x.png" alt="With SCV" class="chart-icon">
+                    <p>With SCV</p>
+                    <canvas id="chartWithSCV"></canvas>
+                    <p>With AI Machine Learning</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Wide Integration Section -->
+    <div class="wide-integration-section">
+        <div class="wide-integration-image">
+            <img src="1_ASSETS/PNG Transparent/14_Wide Integration@2x.png" alt="Wide Integration">
+        </div>
+        <div class="wide-integration-text">
+            <h2>WIDE INTEGRATION</h2>
+            <h3>Works Best with Your Existing Green Building System</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+            </p>
+        </div>
+    </div>
+    <!-- Modular Section -->
+    <div class="modular-section">
+        <div class="modular-text">
+            <h2>MODULAR</h2>
+            <h3>Easy Fitting in Every Place</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                lobortis nisl ut aliquip ex ea commodo consequat.
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
+                dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+                luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            </p>
+        </div>
+        <div class="modular-image">
+            <img src="1_ASSETS/PNG Transparent/15_Modular Diagram@2x.png" alt="Modular Diagram">
+        </div>
+    </div>
+    <div class="merged-section">
+        <!-- Mobile App Section -->
+        <div class="mobile-app-section">
+            <div class="app-image">
+                <img src="1_ASSETS/PNG Transparent/16_Mobile App@2x.png" alt="Mobile App">
+            </div>
+            <div class="app-text">
+                <h2>EASIER WITH MOBILE APP</h2>
+                <h3>Tracking Your Daily Water Usage Has Never Been Easier</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore magna aliqua. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in hendrerit in vulputate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                    est
+                    laborum.
+                </p>
+                <p><strong>TRY IT NOW:</strong></p>
+            </div>
+        </div>
+
+        <!-- Scalable Projects Section -->
+        <div class="scalable-projects-section">
+            <h2>SCALABLE</h2>
+            <h3>For All Types of Projects</h3>
+            <div class="project-cards">
+                <div class="project-card">
+                    <img src="1_ASSETS/PNG Transparent/17_Small@2x.png" alt="Small Project">
+                    <h4>SMALL</h4>
+                </div>
+                <div class="project-card">
+                    <img src="1_ASSETS/PNG Transparent/18_Medium@2x.png" alt="Medium Project">
+                    <h4>MEDIUM</h4>
+                </div>
+                <div class="project-card">
+                    <img src="1_ASSETS/PNG Transparent/19_Big@2x.png" alt="Big Project">
+                    <h4>BIG</h4>
+                </div>
+            </div>
+            <p class="check-prices">Check Prices &gt;&gt;</p>
+        </div>
+    </div>
+    <!-- Integrated Places and Gallery Section -->
+    <div class="integrated-gallery-section">
+        <!-- Integrated Places Section -->
+        <div class="integrated-places">
+            <h2>INTEGRATED PLACES</h2>
+            <img src="1_ASSETS/PNG Transparent/20_Map of Taiwan@2x.png" alt="Map of Taiwan">
+        </div>
+
+        <!-- Gallery Slideshow Section -->
+        <div class="gallery-section">
+            <h2>GALLERY</h2>
+            <div class="gallery-slideshow">
+                <button class="slide-btn prev-slide">&lt;</button>
+                <div class="slideshow-content">
+                    <p>Gallery Slideshow</p>
+                </div>
+                <button class="slide-btn next-slide">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Left Chart: Without SCV
+        const ctx1 = document.getElementById('chartWithoutSCV').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Without SCV',
+                    data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+                    borderColor: '#888',
+                    borderWidth: 2,
+                    fill: false,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
                     }
                 }
-            ]
+            }
+        });
+
+        // Right Chart: With SCV
+        const ctx2 = document.getElementById('chartWithSCV').getContext('2d');
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'With SCV',
+                    data: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 100, 100],
+                    borderColor: '#00aaff',
+                    borderWidth: 2,
+                    fill: false,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
         });
     </script>
-    <script>
-        
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Taiwan, Australia, Indonesia</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+886-971676364</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>seacyclevalve@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- About the Company -->
+            <div class="about-company">
+                <h3>About the company</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod convallis velit, eu auctor
+                    lacus vehicula sit amet.
+                </p>
+                <p>Find us</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elem = document.querySelector('.flickity');
-    var flkty = new Flickity(elem, {
-      cellSelector: '.col-md-4' // Target col-md-4 elements as carousel cells
-    });
-  });
-    </script>
 </body>
 
 </html>

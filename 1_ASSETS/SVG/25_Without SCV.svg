@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.24 88.24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-5 {
+        fill: #b4c1cd;
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="88.24" height="88.24"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <circle class="cls-2" cx="44.12" cy="44.12" r="44.12" transform="translate(-8.96 11.32) rotate(-13.28)"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-2" x="19.05" y="19.69" width="50.13" height="50.13" transform="translate(-18.73 44.3) rotate(-45)"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <polygon class="cls-2" points="68.48 33.68 55.19 20.38 44.11 31.46 33.04 20.38 19.74 33.68 30.82 44.75 19.74 55.83 33.04 69.13 44.11 58.05 55.19 69.13 68.48 55.83 57.41 44.75 68.48 33.68"/>
+    </clipPath>
+  </defs>
+  <g id="Text">
+    <g class="cls-7">
+      <g class="cls-3">
+        <rect class="cls-5" width="88.24" height="88.24"/>
+      </g>
+    </g>
+    <g class="cls-6">
+      <g class="cls-4">
+        <rect class="cls-1" x="19.05" y="19.69" width="50.13" height="50.13" transform="translate(-18.73 44.3) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+</svg>

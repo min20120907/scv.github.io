@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 779 140">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: OpenSans-BoldItalic, 'Open Sans';
+        font-size: 66.57px;
+        font-style: italic;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="HEader">
+    <text class="cls-1" transform="translate(175.68 92.47)"><tspan x="0" y="0">Sea - Cycle - Valve</tspan></text>
+    <image width="1134" height="1134" transform="scale(.12)" xlink:href="../../../logo/logo 3.jpg"/>
+  </g>
+</svg>

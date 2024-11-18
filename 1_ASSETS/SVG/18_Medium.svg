@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 802.5 600.51">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="143.61" y="57.32" width="463.5" height="463.5"/>
+    </clipPath>
+  </defs>
+  <g id="Placeholder">
+    <g class="cls-2">
+      <image width="2352" height="1760" transform="scale(.34)" xlink:href="../../Images/a51b31312268403897019d228b4d86fa.png"/>
+    </g>
+  </g>
+</svg>
