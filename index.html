@@ -22,8 +22,12 @@
             <input type="text" placeholder="Search..." class="search-input">
             <button class="search-button"></button>
         </div>
+        <!-- ★ NEW ★：手機版顯示「Menu」按鈕（漢堡圖示可以自行調整） -->
+        <button class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
-
+    
     <!-- Navigation Bar -->
     <nav class="nav-bar">
         <ul class="nav-links">
@@ -35,7 +39,31 @@
             <li><i class="fas fa-phone-alt"></i><span>Contact Us</span></li>
         </ul>
     </nav>
-
+    <!-- 右側側邊選單 (手機版用) -->
+    <!-- ★ NEW ★：把搜尋列、導覽連結 (或你想要的連結) 放進來 -->
+    <div class="overlay" id="overlay"></div> <!-- ★ 透明背景(overlay)在 sideNav 旁邊 -->
+    <nav class="side-nav" id="sideNav">
+        <!-- 可選：想要點選外部關閉，可用一個外框 close-area，這裡用最小結構即可 -->
+        <div class="side-nav-content">
+            <!-- 手機版的搜尋列 (如果想放在這裡) -->
+            <div class="mobile-search-wrapper">
+            <div class="mobile-search">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-button"></button>
+            </div>
+        </div>
+            <!-- 複製/簡化的導覽連結 -->
+            <ul class="mobile-nav">
+                <li><i class="fas fa-info-circle"></i><span>About</span></li>
+                <li><i class="fas fa-cogs"></i><span>SCV System</span></li>
+                <li><i class="fas fa-image"></i><span>Gallery</span></li>
+                <li><i class="fas fa-globe"></i><span>Languages</span></li>
+                <li><i class="fas fa-shopping-cart"></i><span>Cart</span></li>
+                <li><i class="fas fa-phone-alt"></i><span>Contact Us</span></li>
+            </ul>
+            <!-- 右側側邊選單 (手機版用) -->
+        </div>
+    </nav>
 
     <!-- Bottom Menu Bar -->
     <div class="bottom-menu">
@@ -73,23 +101,24 @@
             <div class="charts-container">
                 <!-- Left Chart: Without SCV -->
                 <div class="chart">
-                    <img src="1_ASSETS/PNG Transparent/25_Without SCV@2x.png" alt="Without SCV" class="chart-icon">
-                    <p>Without SCV</p>
-                    <canvas id="chartWithoutSCV"></canvas>
-                    <p>Without AI Machine Learning</p>
+                  <img src="1_ASSETS/PNG Transparent/25_Without SCV@2x.png" alt="Without SCV" class="chart-icon">
+                  <p>Without SCV</p>
+                  <canvas id="chartWithoutSCV"></canvas>
+                  <p>Without AI Machine Learning</p>
                 </div>
-
-                <!-- Divider -->
+              
+                <!-- VS Text -->
                 <div class="vs-text">VS</div>
-
+              
                 <!-- Right Chart: With SCV -->
                 <div class="chart">
-                    <img src="1_ASSETS/PNG Transparent/26_With SCV@2x.png" alt="With SCV" class="chart-icon">
-                    <p>With SCV</p>
-                    <canvas id="chartWithSCV"></canvas>
-                    <p>With AI Machine Learning</p>
+                  <img src="1_ASSETS/PNG Transparent/26_With SCV@2x.png" alt="With SCV" class="chart-icon">
+                  <p>With SCV</p>
+                  <canvas id="chartWithSCV"></canvas>
+                  <p>With AI Machine Learning</p>
                 </div>
-            </div>
+              </div>
+              
         </div>
 
     </div>
@@ -156,6 +185,7 @@
         <div class="scalable-projects-section">
             <h2>SCALABLE</h2>
             <h3>For All Types of Projects</h3>
+            <div class="gallery-wrapper">
             <div class="project-cards">
                 <div class="project-card">
                     <img src="1_ASSETS/PNG Transparent/17_Small@2x.png" alt="Small Project">
@@ -170,6 +200,7 @@
                     <h4>BIG</h4>
                 </div>
             </div>
+        </div>
             <p class="check-prices">Check Prices &gt;&gt;</p>
         </div>
     </div>
@@ -286,7 +317,26 @@
             </div>
         </div>
     </footer>
+    <!-- ★ NEW ★：最後面加上控制側邊選單的 JS -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+const sideNav = document.getElementById("sideNav");
+const overlay = document.getElementById("overlay");
 
+// 按下按鈕，打開選單，同步打開 overlay
+menuBtn.addEventListener("click", () => {
+  sideNav.classList.toggle("active");
+  overlay.classList.toggle("active");
+});
+
+// 點擊 overlay，就關閉選單 & overlay
+overlay.addEventListener("click", () => {
+  sideNav.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+    
+    </script>
 
 </body>
 

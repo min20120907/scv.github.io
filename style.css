@@ -33,10 +33,10 @@ body {
 /* Search Bar Wrapper */
 .search-wrapper {
     position: relative;
-    width: 350px;
+    width: 300px;
     height: 45px;
     background: url('1_ASSETS/PNG Transparent/3_Search Bar@2x.png') no-repeat center;
-    background-size: cover;
+    background-size: contain;
     display: flex;
     align-items: center;
 }
@@ -217,19 +217,7 @@ body {
     color: #222;
 }
 
-.charts-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
-}
 
-.chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-}
 
 .chart-icon {
     width: 50px;
@@ -237,13 +225,52 @@ body {
     margin-bottom: 10px;
 }
 
-.vs-text {
+/* 基本樣式：桌面版 (水平方向排列) */
+.charts-container {
+    display: flex;
+    flex-direction: row; /* 預設水平方向 */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px; /* 元素之間的間距 */
+  }
+  
+  .chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .vs-text {
     font-size: 24px;
     color: #777;
     align-self: center;
-    margin-top: 60px;
-}
-
+  }
+/* 手機版樣式 */
+@media (max-width: 768px) {
+    .charts-container {
+      flex-direction: column; /* 垂直排列 */
+      align-items: center; /* 內容置中 */
+      gap: 30px; /* 增加圖表與文字間距 */
+    }
+  
+    .chart {
+      width: 90%; /* 手機版圖表放大 */
+      max-width: 400px; /* 限制最大寬度 */
+    }
+  
+    canvas {
+      width: 100% !important; /* 確保 Canvas 撐滿容器 */
+      height: auto !important; /* 自動調整高度 */
+    }
+  
+    .vs-text {
+      font-size: 20px; /* 手機版文字稍微縮小 */
+      margin: 10px 0; /* 增加 VS 的上下間距 */
+      text-align: center;
+    }
+  }
+  
 canvas {
     width: 100%;
     height: 200px;
@@ -383,30 +410,49 @@ canvas {
     color: #555;
     margin-bottom: 30px;
 }
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.project-card {
-    text-align: center;
-}
-
-.project-card img {
-    width: 200px;
+/* 圖廊外層容器 */
+.gallery-wrapper {
+    overflow-x: auto; /* 允許橫向滾動 */
+    white-space: nowrap; /* 內容不換行 */
+    width: 100%; /* 滿版寬度 */
+    padding-bottom: 10px; /* 加點間距避免滾動條擋住內容 */
+    scroll-snap-type: x mandatory; /* 添加滑動效果 */
+  }
+  
+  /* 圖廊內部的卡片 */
+  .project-cards {
+    display: inline-flex; /* 內部卡片水平排列 */
+    gap: 15px; /* 卡片間距 */
+    align-items: center; /* 垂直對齊 */
+  }
+  
+  .project-card {
+    flex: 0 0 auto; /* 防止卡片縮放 */
+    width: 200px; /* 卡片固定寬度 */
+    text-align: center; /* 文本置中 */
+    scroll-snap-align: center; /* 滑動時自動對齊 */
+  }
+  
+  .project-card img {
+    width: 100%; /* 確保圖片適應卡片寬度 */
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h4 {
-    font-size: 18px;
+    border-radius: 10px; /* 添加圓角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+  }
+  
+  .project-card h4 {
+    font-size: 16px;
     color: #333;
     margin-top: 10px;
-}
-
+  }
+  
+  /* 手機版專屬調整 */
+  @media (max-width: 768px) {
+    .project-cards {
+      gap: 10px; /* 減小卡片間距 */
+    }
+  }
+  
 .check-prices {
     margin-top: 20px;
     font-size: 16px;
@@ -580,3 +626,157 @@ p, .contact-item span, .about-company p {
 .nav-bar .nav-links span, .menu-item span {
     font-weight: 600; /* Semi-bold */
 }
+/*=========================*/
+/* 1) 基礎(不分桌/手機)樣式 */
+/*=========================*/
+
+/* -- 菜單按鈕 -- */
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    display: none; /* 預設不顯示(桌機) */
+    z-index: 1100;
+  }
+  
+  /* -- Overlay -- */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    display: none; 
+    z-index: 999; /* 在主頁面之上，側邊選單之下 */
+  }
+  .overlay.active {
+    display: block;
+  }
+  
+  /* -- 右側側邊選單 -- */
+  .side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background: linear-gradient(to bottom, #333, #444);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .side-nav.active {
+    transform: translateX(0);
+  }
+  .side-nav .side-nav-content {
+    flex: 1; 
+    overflow-y: auto;
+  }
+  
+  /* 手機版的搜尋 */
+  .mobile-search {
+    margin-bottom: 0rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .mobile-search .search-button {
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-search-wrapper {
+    position: relative;
+    width: 85%;
+    height: 45px;
+    background: url('1_ASSETS/PNG Transparent/3_Search Bar@2x.png') no-repeat center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+  }
+  .mobile-search-wrapper .search-input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding-left: 15px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  
+  /* 手機版導覽連結 */
+  .mobile-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-nav li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .mobile-nav li i {
+    margin-right: 0.5rem;
+  }
+  
+  /*=========================*/
+  /* 2) 行動版 (max-width:768px) */
+  /*=========================*/
+  @media (max-width: 768px) {
+    /* 顯示漢堡按鈕 */
+    .menu-btn {
+      display: block;
+      color: #fff;
+    }
+  
+    /* 隱藏桌機版導覽列 & 搜尋欄 (若需要) */
+    .nav-bar {
+      display: none;
+    }
+    .search-wrapper {
+      display: none;
+    }
+  
+    /* 其他針對小螢幕的排版調整... */
+  }
+  
+  /*=========================*/
+  /* 3) 桌面版 (min-width:769px) */
+  /*=========================*/
+  @media (min-width: 769px) {
+    .menu-btn {
+      display: none;  /* 桌面不需要漢堡按鈕 */
+    }
+    .overlay {
+      display: none;  /* 不用 overlay */
+    }
+    .side-nav {
+      display: none;  /* 不用側邊選單 */
+    }
+  
+    /* 如果你的桌機版原本是 nav-bar + search-wrapper */
+    .nav-bar {
+      display: flex; /* 或 block, 視原有設計 */
+    }
+    .search-wrapper {
+      display: flex; /* 同上 */
+    }
+  }
+  
