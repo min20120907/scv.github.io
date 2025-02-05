@@ -470,13 +470,64 @@ img {
     color: #333;
     margin-top: 10px;
   }
-  
-  /* 手機版專屬調整 */
-  @media (max-width: 768px) {
-    .project-cards {
-      gap: 10px; /* 減小卡片間距 */
-    }
-  }
+  /* Scalable Projects Section */
+.scalable-projects-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: url('1_ASSETS/PNG Transparent/24_Website Background_Light@2x.png') no-repeat center center;
+    background-size: cover;
+}
+.project-cards-wrapper {
+    display: flex;
+    overflow-x: auto; /* 開啟水平滾動 */
+    gap: 15px; /* 卡片間距 */
+    padding: 0 15px; /* 避免內容緊貼邊緣 */
+    max-width: 100%; /* 防止超出父容器 */
+}
+
+
+.project-card {
+    flex: 0 0 auto; /* 禁止卡片自動縮放 */
+    width: 200px; /* 設置固定寬度 */
+    scroll-snap-align: center; /* 滑動後居中對齊 */
+    text-align: center; /* 文本居中 */
+    background-color: #fff; /* 添加背景色 */
+    border-radius: 10px; /* 添加圓角效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+}
+
+.project-card img {
+    width: 100%; /* 確保圖片適應卡片寬度 */
+    height: auto;
+    border-radius: 10px; /* 添加圓角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+}
+
+.project-card h4 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+.project-cards-wrapper::before,
+.project-cards-wrapper::after {
+    content: ''; /* 為兩側添加虛擬空間 */
+    flex: 0 0 15px; /* 假設間距為15px */
+}
+
+
+.project-cards-wrapper::-webkit-scrollbar {
+    height: 8px; /* 滾動條高度 */
+}
+
+.project-cards-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* 滾動條顏色 */
+    border-radius: 4px;
+}
+
+.project-cards-wrapper::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* 滾動條軌道顏色 */
+}
+
   
 .check-prices {
     margin-top: 20px;
@@ -847,28 +898,59 @@ p, .contact-item span, .about-company p {
         margin: 10px 0; /* 增加 VS 的間距 */
     }
 }
-
+/* 手機版樣式 */
 @media (max-width: 768px) {
+    .scalable-projects-section {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .project-cards-wrapper {
+        display: flex;
+        flex-direction: column; /* 改成垂直排列 */
+        gap: 20px; /* 元素之間的間距 */
+        align-items: center; /* 內容置中 */
+        width: 100%; /* 確保寬度不超過視窗 */
+    }
+
     .project-cards {
         display: flex;
-        flex-wrap: nowrap; /* 禁止換行 */
-        overflow-x: auto; /* 開啟水平滾動 */
-        gap: 10px; /* 減小卡片間距 */
-        scroll-snap-type: x mandatory; /* 強制對齊 */
+        flex-direction: column; /* 改成垂直排列 */
+        gap: 20px; /* 圖片與標題間距 */
+        align-items: center; /* 對齊置中 */
+        width: 100%;
     }
 
     .project-card {
-        flex: 0 0 auto; /* 固定卡片大小 */
-        width: 200px; /* 卡片寬度 */
-        text-align: center;
-        scroll-snap-align: center; /* 滑動時對齊中間 */
+        display: flex;
+        flex-direction: column; /* 每個卡片的圖片與文字上下排列 */
+        align-items: center; /* 置中 */
+        gap: 10px; /* 卡片內部間距 */
+        width: 80%; /* 控制每個卡片的寬度 */
+        max-width: 300px; /* 設置卡片最大寬度 */
     }
 
     .project-card img {
-        border-radius: 10px; /* 添加圓角 */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+        width: 100%; /* 圖片自適應卡片寬度 */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card h4 {
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+
+    .check-prices {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #007BFF;
+        text-decoration: underline;
     }
 }
+
 
 @media (max-width: 768px) {
     .youtube-video {
@@ -925,4 +1007,7 @@ p, .contact-item span, .about-company p {
     .container {
         padding: 0 10px; /* 為所有內容加內間距 */
     }
+}
+* {
+    box-sizing: border-box;
 }
