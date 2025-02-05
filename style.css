@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #c8cdf8;
     color: #fff;
+    overflow-x: hidden;
 }
 
 /* Top Section Styling */
@@ -164,6 +165,7 @@ body {
     width: 100%;
     height: auto;
     border: none;
+    max-width: 100%;
     /* Remove border */
     box-shadow: none;
     /* Remove shadow */
@@ -224,7 +226,27 @@ body {
     height: 50px;
     margin-bottom: 10px;
 }
-
+@media (max-width: 768px) {
+    body {
+      overflow-x: hidden; /* 確保手機版不會橫向滾動 */
+    }
+  
+    .container {
+      padding: 0 10px; /* 為內容添加內間距，避免貼邊 */
+    }
+  
+    .project-cards {
+      overflow-x: auto; /* 圖片橫向滾動 */
+      display: flex;
+      gap: 10px; /* 圖片間距 */
+    }
+  }
+  .charts-container,
+  .project-cards {
+    max-width: 100%; /* 限制寬度 */
+    overflow: hidden; /* 防止溢出 */
+  }
+   
 /* 基本樣式：桌面版 (水平方向排列) */
 .charts-container {
     display: flex;
@@ -342,6 +364,7 @@ canvas {
     width: 100%;
     height: auto;
     border: none;
+    max-width: 100%;
     /* Remove border */
 }
 
@@ -364,7 +387,9 @@ canvas {
     width: 100%;
     height: auto;
 }
-
+img {
+    max-width: 100%;
+}
 .app-text {
     flex: 1;
     max-width: 500px;
@@ -646,11 +671,13 @@ p, .contact-item span, .about-company p {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     background: rgba(0,0,0,0.5);
     display: none; 
     z-index: 999; /* 在主頁面之上，側邊選單之下 */
+    overflow: hidden; /* 防止滾動 */
   }
   .overlay.active {
     display: block;
@@ -780,3 +807,122 @@ p, .contact-item span, .about-company p {
     }
   }
   
+  @media (max-width: 768px) {
+    .wide-integration-section {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 水平置中 */
+        padding: 20px; /* 手機版縮小內間距 */
+    }
+
+    .wide-integration-text {
+        text-align: center; /* 將文字置中對齊 */
+        margin: 0 0 20px; /* 調整文字與圖片的間距 */
+    }
+
+    .wide-integration-image {
+        margin: 0; /* 移除左右間距 */
+    }
+
+    .wide-integration-image img {
+        width: 90%; /* 圖片縮放，適應手機屏幕 */
+        max-width: 400px; /* 限制圖片的最大寬度 */
+        height: auto; /* 保持比例 */
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison-section {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
+        gap: 20px; /* 元素間間距 */
+    }
+
+    .comparison-section .chart {
+        width: 90%; /* 圖表縮放，適應手機屏幕 */
+        max-width: 400px;
+    }
+
+    .comparison-section .vs-text {
+        font-size: 18px; /* 字體縮小 */
+        margin: 10px 0; /* 增加 VS 的間距 */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-cards {
+        display: flex;
+        flex-wrap: nowrap; /* 禁止換行 */
+        overflow-x: auto; /* 開啟水平滾動 */
+        gap: 10px; /* 減小卡片間距 */
+        scroll-snap-type: x mandatory; /* 強制對齊 */
+    }
+
+    .project-card {
+        flex: 0 0 auto; /* 固定卡片大小 */
+        width: 200px; /* 卡片寬度 */
+        text-align: center;
+        scroll-snap-align: center; /* 滑動時對齊中間 */
+    }
+
+    .project-card img {
+        border-radius: 10px; /* 添加圓角 */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 添加陰影 */
+    }
+}
+
+@media (max-width: 768px) {
+    .youtube-video {
+        width: 90%;
+        max-width: 400px;
+        height: auto; /* 保持比例 */
+        border-radius: 8px; /* 縮小圓角 */
+    }
+}
+
+@media (max-width: 768px) {
+    .bottom-menu {
+        display: flex;
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
+        gap: 10px; /* 間距 */
+        padding: 10px 0;
+    }
+
+    .menu-item img {
+        width: 40px; /* 圖標放大 */
+        height: auto;
+    }
+
+    .menu-item span {
+        font-size: 14px; /* 字體放大 */
+    }
+}
+
+@media (max-width: 768px) {
+    .modular-section {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 水平置中 */
+        gap: 30px;
+    }
+
+    .modular-section img {
+        width: 90%; /* 圖片縮放 */
+        max-width: 400px;
+        height: auto;
+    }
+
+    .modular-section .modular-text {
+        text-align: center; /* 文字置中 */
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* 禁止橫向滾動 */
+    }
+
+    .container {
+        padding: 0 10px; /* 為所有內容加內間距 */
+    }
+}
